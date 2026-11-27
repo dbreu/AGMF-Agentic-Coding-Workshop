@@ -6,7 +6,7 @@
       "name": "Sauron (AG LLM)",
       "options": {
         "baseURL": "https://sauron.physik.uni-kl.de/litellm/v1",
-        "apiKey": 
+        "apiKey": "{env:SAURON_LITELLM_KEY}"
       },
       "models": {
         "qwen-27b": {
