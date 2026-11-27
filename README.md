@@ -4,18 +4,28 @@ Dieses Repository enthält die OpenCode-Konfiguration und die wichtigsten Shell-
 
 ## Voraussetzungen
 
-- Ein Terminal mit `bash`
+- Linux oder MacOS mit einem Terminal
 - Zugriff auf den Sauron-/LiteLLM-Dienst und einen API-Key
 
 ## Einrichtung
 
-1. Setze zuerst deinen persönlichen API-Key für die aktuelle Terminalsitzung:
+1. Hinterlege zuerst deinen persönlichen API-Key dauerhaft in deiner Shell-Konfiguration:
+
+   **Linux (bash):**
 
    ```bash
-   export SAURON_LITELLM_KEY="DEIN_API_KEY"
+   echo 'export SAURON_LITELLM_KEY="DEIN_API_KEY"' >> ~/.bashrc
+   source ~/.bashrc
    ```
 
-   Ersetze `DEIN_API_KEY` durch deinen Key. Die OpenCode-Konfiguration liest den Key aus der Umgebungsvariable `SAURON_LITELLM_KEY`. Setze die Variable unbedingt, bevor du OpenCode installierst und startest.
+   **MacOS (zsh):**
+
+   ```bash
+   echo 'export SAURON_LITELLM_KEY="DEIN_API_KEY"' >> ~/.zshrc
+   source ~/.zshrc
+   ```
+
+   Ersetze `DEIN_API_KEY` durch deinen Key. MacOS nutzt standardmäßig `zsh`, daher kommt der Key dort in `~/.zshrc`. Die OpenCode-Konfiguration liest den Key aus der Umgebungsvariable `SAURON_LITELLM_KEY`. Hinterlege die Variable unbedingt, bevor du OpenCode installierst und startest.
 
 2. Installiere OpenCode:
 
@@ -50,6 +60,6 @@ Dieses Repository enthält die OpenCode-Konfiguration und die wichtigsten Shell-
 
 ## Hinweise
 
-- Der `export`-Befehl gilt nur für das aktuelle Terminal. Wenn du OpenCode später in einem neuen Terminal startest, musst du die Variable erneut setzen oder sie lokal in deiner Shell-Konfiguration hinterlegen.
+- Der Key wird dauerhaft in `~/.bashrc` bzw. `~/.zshrc` hinterlegt und gilt damit auch in neuen Terminals. Wenn sich dein Key ändert, passe die entsprechende Zeile in der Datei an.
 - Behandle deinen API-Key vertraulich. Trage ihn nicht in `opencode.json` ein und committe ihn nicht ins Repository.
 - Falls du die Konfiguration anpassen möchtest, bearbeite `opencode.json` im Repository und kopiere sie anschließend erneut nach `~/.config/opencode/opencode.json`.
