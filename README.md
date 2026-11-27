@@ -6,7 +6,7 @@ This repository contains the OpenCode configuration and the essential shell comm
 
 - Linux or MacOS with a terminal
 - 💩 Windows: use WSL (Windows Subsystem for Linux)
-- Access to the Sauron/LiteLLM service and an API key
+- An API key for the Sauron/LiteLLM service (the service is accessible from anywhere, so this is all you need)
 
 ## Setup
 
