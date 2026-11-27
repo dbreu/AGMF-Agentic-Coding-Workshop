@@ -1,65 +1,65 @@
 # AGMF Agentic Coding Workshop
 
-Dieses Repository enthält die OpenCode-Konfiguration und die wichtigsten Shell-Befehle für den AGMF-Agentic-Coding-Workshop. So kannst du die Einrichtung übernehmen, ohne die Konfiguration von Hand anpassen zu müssen.
+This repository contains the OpenCode configuration and the essential shell commands for the AGMF Agentic Coding Workshop, so you can set everything up without having to adjust the configuration by hand.
 
-## Voraussetzungen
+## Prerequisites
 
-- Linux oder MacOS mit einem Terminal
-- Zugriff auf den Sauron-/LiteLLM-Dienst und einen API-Key
+- Linux or MacOS with a terminal
+- Access to the Sauron/LiteLLM service and an API key
 
-## Einrichtung
+## Setup
 
-1. Hinterlege zuerst deinen persönlichen API-Key dauerhaft in deiner Shell-Konfiguration:
+1. First, persist your personal API key in your shell configuration:
 
    **Linux (bash):**
 
    ```bash
-   echo 'export SAURON_LITELLM_KEY="DEIN_API_KEY"' >> ~/.bashrc
+   echo 'export SAURON_LITELLM_KEY="YOUR_API_KEY"' >> ~/.bashrc
    source ~/.bashrc
    ```
 
    **MacOS (zsh):**
 
    ```bash
-   echo 'export SAURON_LITELLM_KEY="DEIN_API_KEY"' >> ~/.zshrc
+   echo 'export SAURON_LITELLM_KEY="YOUR_API_KEY"' >> ~/.zshrc
    source ~/.zshrc
    ```
 
-   Ersetze `DEIN_API_KEY` durch deinen Key. MacOS nutzt standardmäßig `zsh`, daher kommt der Key dort in `~/.zshrc`. Die OpenCode-Konfiguration liest den Key aus der Umgebungsvariable `SAURON_LITELLM_KEY`. Hinterlege die Variable unbedingt, bevor du OpenCode installierst und startest.
+   Replace `YOUR_API_KEY` with your key. MacOS uses `zsh` by default, so the key goes into `~/.zshrc` there. The OpenCode configuration reads the key from the environment variable `SAURON_LITELLM_KEY`. Make sure to set the variable before installing and starting OpenCode.
 
-2. Installiere OpenCode:
+2. Install OpenCode:
 
    ```bash
    curl -fsSL https://opencode.ai/v2/install | bash
    ```
 
-3. Klone dieses Repository und wechsle in das Verzeichnis:
+3. Clone this repository and change into the directory:
 
    ```bash
    git clone https://github.com/dbreu/AGMF-Agentic-Coding-Workshop.git
    cd AGMF-Agentic-Coding-Workshop
    ```
 
-4. Lege den OpenCode-Konfigurationsordner an und kopiere die bereitgestellte Konfiguration dorthin:
+4. Create the OpenCode configuration directory and copy the provided configuration into it:
 
    ```bash
    mkdir -p ~/.config/opencode
    cp opencode.json ~/.config/opencode/opencode.json
    ```
 
-5. Starte OpenCode:
+5. Start OpenCode:
 
    ```bash
    opencode
    ```
 
-## Dateien
+## Files
 
-- `opencode.json` – OpenCode-Konfiguration für den Sauron-Provider und das Workshop-Modell.
-- `commands.sh` – kurze Sammlung der grundlegenden Einrichtungsbefehle.
+- `opencode.json` – OpenCode configuration for the Sauron provider and the workshop model.
+- `commands.sh` – a short collection of the basic setup commands.
 
-## Hinweise
+## Notes
 
-- Der Key wird dauerhaft in `~/.bashrc` bzw. `~/.zshrc` hinterlegt und gilt damit auch in neuen Terminals. Wenn sich dein Key ändert, passe die entsprechende Zeile in der Datei an.
-- Behandle deinen API-Key vertraulich. Trage ihn nicht in `opencode.json` ein und committe ihn nicht ins Repository.
-- Falls du die Konfiguration anpassen möchtest, bearbeite `opencode.json` im Repository und kopiere sie anschließend erneut nach `~/.config/opencode/opencode.json`.
+- The key is persisted in `~/.bashrc` or `~/.zshrc`, so it is also available in new terminals. If your key changes, adjust the corresponding line in the file.
+- Keep your API key confidential. Do not put it into `opencode.json` and do not commit it to the repository.
+- If you want to adjust the configuration, edit `opencode.json` in the repository and copy it to `~/.config/opencode/opencode.json` again.
